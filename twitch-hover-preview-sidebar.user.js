@@ -10,7 +10,7 @@
 // @updateURL    https://raw.githubusercontent.com/ab0214/twitch-hover-preview-userscript/main/twitch-hover-preview-sidebar.user.js
 // @author       ab0214
 // @license      MIT
-// @version      1.0
+// @version      1.1
 // ==/UserScript==
 
 (function () {
@@ -36,13 +36,16 @@
     }
 
     function injectOrUpdatePreview(card) {
-        // Get existing preview iframe if it exists
-        let iframe = card.querySelector(`.${PREVIEW_CLASS}`);
-        // Try to get channel name from last hovered link
-        let channel = lastHoveredChannel
-        // If no channel name, remove iframe and return
-        if (!channel) {
+        // Get existing preview iframe if it exists.
+        const iframe = card.querySelector(`.${PREVIEW_CLASS}`);
+        // Get channel name from last hovered link.
+        const channel = lastHoveredChannel;
+        // Look for "See all recent videos" link to determine whether channel if offline.
+        const isOffline = card.querySelector('a[href$="/videos?filter=all"]');
+        // If no channel could not be determined or is offline, remove any existing preview and return.
+        if (!channel || isOffline) {
             iframe?.remove();
+            card.style.width = '';
             return;
         }
         // Inject preview iframe if it doesn't exist yet.
