@@ -6,8 +6,8 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitch.tv
 // @namespace    https://github.com/ab0214/twitch-hover-preview-userscript
 // @homepageURL  https://github.com/ab0214/twitch-hover-preview-userscript
-// @downloadURL  https://raw.githubusercontent.com/ab0214/twitch-hover-preview-userscript/main/
-// @updateURL    https://raw.githubusercontent.com/ab0214/twitch-hover-preview-userscript/main/
+// @downloadURL  https://raw.githubusercontent.com/ab0214/twitch-hover-preview-userscript/main/twitch-content-warning-skip.user.js
+// @updateURL    https://raw.githubusercontent.com/ab0214/twitch-hover-preview-userscript/main/twitch-content-warning-skip.user.js
 // @author       ab0214
 // @license      MIT
 // @version      1.0
